@@ -42,18 +42,6 @@
             justify-self: center;
             display: none;
         }
-        .title {
-            font-size: var(--lg);
-            margin-bottom: 12px;
-            text-align: center;
-        }
-        .subtittle {
-            color: var(--very-light-pink);
-            font-size: var(--md);
-            margin-top: 0;
-            margin-bottom: 32px;
-            text-align: center;
-        }
         .label {
             font-size: var(--sm);
             font-weight: bold;
@@ -68,11 +56,25 @@
             padding: 6px;
             margin-bottom: 12px;
         }
+        .input email {
+            margin-bottom: 22px;
+        }
         .primary-button {
             background: var(--hospital-green);
             border-radius: 8px;
             border: none;
             color: var(--white);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+        .secondary-button {
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
             width: 100%;
             cursor: pointer;
             font-size: var(--md);
@@ -87,6 +89,13 @@
             display: flex;
             flex-direction: column;
         }
+        .form a {
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 52px;
+        }
         body {
             margin: 0;
             font-family: 'Quicksand', sans-serif;
@@ -96,6 +105,11 @@
             .logo {
                 display: block;
             }
+            .secondary-button {
+                position: absolute;
+                bottom: 20px;
+                width: inherit;
+            }
         }
     </style>
 </head>
@@ -104,18 +118,17 @@
         <div class="form-container">
             <img src="logos/logo_yard_sale.svg" alt="logo" class="logo">
 
-            <h1 class="title">Create a new password</h1>
-            <p class="subtittle">Enter a new password for your account</p>
-
             <form action="/" class="form">
-                <label for="password" class="label">Password</label>
-                <input type="password" id="password" placeholder="********" class="input input-password">
+                <label for="email" class="label">Email address</label>
+                <input type="text" id="email" placeholder="youremail@email.com" class="input input-password">
                 
-                <label for="new-password" class="label">Password</label>
-                <input type="password" id="new-password" placeholder="********" class="input input-password">
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" placeholder="********" class="input input-email">
 
-                <input type="submit" value="Confirm" class="primary-button login-button">
+                <input type="submit" value="Log in" class="primary-button login-button">
+                <a href="/">Forgot my password</a>
             </form>
+            <button class="secondary-button signup-button">Sign up</button>
         </div>
     </div>
 </body>
